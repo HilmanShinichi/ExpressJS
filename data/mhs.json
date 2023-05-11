@@ -1,0 +1,16 @@
+[
+  {
+    "nama": "hilman",
+    "nik": "0012345",
+    "email": "hilman@gmail.com",
+    "jurusan": "teknik informatika",
+    "idDosenwali": 1
+  },
+  {
+    "nama": "gita",
+    "nik": "0012225",
+    "email": "gita@gmail.com",
+    "jurusan": "teknik informatika",
+    "idDosenwali": 2
+  }
+]

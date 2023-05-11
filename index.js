@@ -1,37 +1,54 @@
 const express = require("express");
 const app = express();
+const request = require("request");
+const http = require("http");
 const port = 3030;
 
+app.use(express.json());
+app.use(express.urlencoded());
+
 //get methode
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
 let job = [
   {
+    id: 1,
     nama: "John",
     umur: 24,
     pekerjaan: "Programmer",
   },
   {
+    id: 2,
     nama: "Alpha",
     umur: 23,
     pekerjaan: "IT Suport",
-  }
-]
+  },
+];
 
-res.status(200).json({
-  status:"success",
-    respone: {
-      respone: job
-    }
-}
-  
-)
-  
+// res.status(200).json({
+//   status:"success",
+//     respone: {
+//       respone: job
+//     }
+// }
+
+// )
+
+// });
+
+app.get("/data/api", (req, res) => {
+  res.status(200).send({ host: req.get("Host"), pathname: req.path, job });
+});
+
+app.post("/data/api", (req, res) => {
+  console.log(req.body);
+  job.push(req.body);
+  res.status(201).send(`Created user`);
 });
 
 //post methode
-app.post("/", (req, res) => {
-  res.send("To Homepage");
-});
+// app.post("/", (req, res) => {
+//   res.send("To Homepage");
+// });
 
 // setTimeout(() => {
 //     console.log("masak rendang");
@@ -201,6 +218,21 @@ app.post("/", (req, res) => {
 // }
 
 // getNow(program, getClass);
+
+//HTTP request dengan menggunakan npm request methode get
+//Routes
+// app.get('/',(req, res) => {
+//     request.get({
+//       url:'https://dummyjson.com/carts',
+//       json:true
+// }, (error, response) => {
+//     if(error) {
+//       return res.send('Error Response');
+//     }
+
+//     res.send(response);
+//   });
+// });
 
 //live server port
 app.listen(port, () => {
