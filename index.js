@@ -33,10 +33,10 @@ let job = [
 
 // )
 
-// });
+
 
 app.get("/data/api", (req, res) => {
-  res.status(200).send({ host: req.get("Host"), pathname: req.path, job });
+  res.status(200).send({ host: req.get('host'), pathname: req.path, job });
 });
 
 app.post("/data/api", (req, res) => {
@@ -232,6 +232,36 @@ app.post("/data/api", (req, res) => {
 
 //     res.send(response);
 //   });
+// });
+
+// app.get('/person', (req, res) => {
+//   console.log(req.query);
+//   return res.json({
+//     message: "Hello",
+//     name: req.query.name,
+//     age: req.query.age,
+//     city: req.query.city,
+//   });
+// });
+
+// //Methode Get / Get Request
+// app.get('/api/v1/users', (req, res) => {
+//   res.send({
+//     message: 'Success',
+//     user: job,
+//   });
+// });
+
+// // Methode Get / Get Request By Params
+// app.get('/api/v1/users/:id', (req, res) => {
+//   const { id: jobsId } = req.params;
+//   const user = job.filter((user) => user.id === parseInt(jobsId))[0];
+//   if (!user) {
+//     return res.status(404).send({ message: "User Not Found" });
+//   }
+//   res.send({ 
+//     message: 'Success',
+//     user });
 // });
 
 //live server port
