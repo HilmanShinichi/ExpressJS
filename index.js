@@ -35,15 +35,24 @@ let job = [
 
 
 
-app.get("/data/api", (req, res) => {
-  res.status(200).send({ host: req.get('host'), pathname: req.path, job });
-});
+// app.get("/data/api", (req, res) => {
+//   res.status(200).send({ header:req.header('host'),headers: req.headers['host'], reqget: req.get('host'),pathname: req.path, job });
+// });
 
-app.post("/data/api", (req, res) => {
-  console.log(req.body);
-  job.push(req.body);
-  res.status(201).send(`Created user`);
-});
+// app.post("/data/api", (req, res) => {
+//   console.log(req.body);
+//   job.push(req.body);
+//   res.status(201).send(`Created user`);
+// });
+let nama = "hanab"
+let dbnama = 'hanabi'
+app.get("/",(req, res) =>{
+  if (nama === dbnama){
+    res.status(200).json({ name: nama, success: 'OK Request'})
+  } else {
+    res.status(500).json({ name: nama, error: 'Bad Request' });
+  }
+})
 
 //post methode
 // app.post("/", (req, res) => {
