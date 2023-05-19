@@ -1,23 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form inputan</title>
-</head>
-<body>
-    
-      <h2>HTML Forms</h2>
+  </head>
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins" />
+  <style>
+    @import url("https://fonts.google.com/specimen/Poppins");
 
-<form method="post">
-  <label for="fname">nama:</label><br>
-  <input type="text" id="nama" name="nama" placeholder="isi nama anda" required><br>
-  <label for="lname">Umur:</label><br>
-  <input type="text" id="umur" name="umur" placeholder="isi umur anda" required><br>
-  <label for="lname">Alamat:</label><br>
-  <input type="text" id="alamat" name="alamat" placeholder="isi alamat anda" required><br><br>
-  <input type="submit">
-</form> 
-</body>
+    body {
+      font-family: Poppins;
+    }
+    .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     border-radius: 6px;
+      background-image: url("https://media.21cineplex.com/webcontent/gallery/pictures/152031789525283_1024x683.jpg");
+    }
+    .container{
+      
+      margin-left: 200px;
+      margin-right: 200px;
+    }
+  </style>
+  <body>
+
+    <div class="container">
+    <center><h2 class="h2">Forms Cetak Tiket Bioskop</h2></center>
+    <div class="form">
+      <form method="post">
+        <label for="fname">Title :</label><br />
+        <input
+          type="text"
+          id="nama"
+          name="title"
+          placeholder="isi Judul Film"
+          required
+        /><br />
+        <label for="fdate">Date :</label><br />
+        <input type="date" name="date" /><br />
+        <label for="ftime">Time :</label><br />
+        <input type="time" name="time" /><br />
+        <label for="frow">Row :</label><br />
+        <label for="">H</label>
+        <input type="radio" name="row" value="H" />
+        <label for="">I</label>
+        <input type="radio" name="row" value="I" />
+        <br />
+        <label for="fseat">Seat :</label><br />
+        <label for="">1</label>
+        <input type="radio" name="seat" value="1" />
+        <label for="">2</label>
+        <input type="radio" name="seat" value="2" />
+        <label for="">3</label>
+        <input type="radio" name="seat" value="3" />
+        <label for="">4</label>
+        <input type="radio" name="seat" value="4" /><br />
+
+        <label for="fstudio">Studio :</label><br />
+        <label for="">1</label>
+        <input type="radio" name="studio" value="1" />
+        <label for="">2</label>
+        <input type="radio" name="studio" value="2" />
+        <label for="">3</label>
+        <input type="radio" name="studio" value="3" />
+        <label for="">4</label>
+        <input type="radio" name="studio" value="4" />
+        <br /><br />
+        <label for="fsprice">Price :</label><br />
+        <span>Rp.</span><input type="number" name="price" /><br /><br />
+        <input type="submit" />
+      </form>
+    </div>
+  </div>
+  </body>
 </html>
